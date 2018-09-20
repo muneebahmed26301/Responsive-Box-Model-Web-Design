@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <title>JS Bin</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #20024a;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1000px;
+  height: 500px;
+  display: flex;
+}
+
+.container .box {
+  position: relative;
+  width: 250px;
+  height: 500px;
+  background: #ccc;
+  transition: 0.5s;
+}
+.container .box:hover {
+  transform: scale(1.1);
+  z-index: 1;
+  box-shadow: 0 5px 20px rgba(0,0,0,1);
+}
+.container .box .thumb {
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+.container .box:nth-child(odd) .thumb {
+  bottom: 0;
+  left: 0;
+}
+.container .box .thumb img {
+  width: 100%;
+}
+.container .box .details {
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background: #262626;
+}
+.container .box:nth-child(even) .details {
+  bottom: 0;
+  left: 0;
+}
+.container .box:nth-child(1) .details {
+  background: #8553cb;
+}
+.container .box:nth-child(2) .details {
+  background: #fe8f01;
+}
+.container .box:nth-child(3) .details {
+  background: #79d400;
+}
+.container .box:nth-child(4) .details {
+  background: #ff3b34;
+}
+.container .box .details .content {
+  position: absolute;
+  top: calc(50% + 16px);
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: 0.5s;
+}
+.container .box:hover .details .content {
+  top: calc(50%);
+}
+.container .box .details .content .fa {
+  font-size: 80px;
+  color: #fff;
+}
+.container .box .details .content h3 {
+  margin: 0;
+  padding: 10px 0;
+  color: #fff;
+}
+.container .box .details .content a {
+  display: inline-block;
+  padding: 5px 20px;
+  color: #fff;
+  border: 2px solid #fff;
+  text-decoration: none;
+  transition: 0.5s;
+  border-radius: 20px;
+  transform: scale(0);
+}
+.container .box:hover .details .content a{
+  transform: scale(1);
+}
+.container .box .details .content a:hover {
+  background: #fff;
+  color: #262626;
+}
+@media (max-width: 1000px) {
+  .container {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .container .box {
+    height: 250px;
+  }
+  .container .box .thumb {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    display: inline-block;
+  }
+    .container .box {
+    width: 50%;
+      height: 250px;
+      float: left;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    top: 0;
+    left: 0;
+    transform: translate(0);
+  }
+    .container .box {
+    width: 100%;
+      height: 250px;
+      float: none;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4800ae89e3ae4ae91bf6aa92c815d98e&auto=format&fit=crop&w=633&q=80" alt=""height="250">
+      </div>
+      <div class="details">
+        <div class="content">
+          <i class="fa fa-gift" aria-hidden="true"></i>
+          <h3>Lorem</h3>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="box">
+      <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1501791187590-9ef2612ba1eb?ixlib=rb-0.3.5&s=127c91442355e01e23fee5b39cc9aecc&auto=format&fit=crop&w=889&q=80" alt=""height="250">
+      </div>
+      <div class="details">
+        <div class="content">
+          <i class="fa fa-globe" aria-hidden="true"></i>
+          <h3>Lorem Ipsum</h3>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="box">
+      <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=578d28abf9ba29ab798e022dcd719743&auto=format&fit=crop&w=934&q=80" alt="" height="250">
+      </div>
+      <div class="details">
+        <div class="content">
+          <i class="fa fa-glass" aria-hidden="true"></i>
+          <h3>Lorem Ipsum</h3>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="box">
+      <div class="thumb">
+        <img src="https://images.unsplash.com/photo-1526653662218-3ab1e4d6ec2a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c8bb393b87ae6f97e6d2f61a5d8b9281&auto=format&fit=crop&w=750&q=80" alt="" height="250">
+      </div>
+      <div class="details">
+        <div class="content">
+          <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+          <h3>Lorem Ipsum</h3>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
